@@ -9,7 +9,7 @@ class Block {
     }
 
     teleportIfOutOfMap() {
-        const maxSize = GAME_SIZE / this.size
+        const maxSize = GAME_SIZE
         if (this.x < 0) {
             snake.alive = false
         } else if (this.x > maxSize) {
@@ -31,13 +31,15 @@ class Block {
 
     draw() {
         if (this.isHead) {
-            ctx.drawImage(snakeHead, this.x * this.size, this.y * this.size, this.size, this.size)
+            ctx.fillStyle = "black";
+            ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size);
         }
         else {
             if (snake.blocks[snake.blocks.length]) {
-                ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size)
+                ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size);
             } else {
-            ctx.drawImage(snakeBody, this.x * this.size, this.y * this.size, this.size, this.size)
+                ctx.fillStyle = "green";
+                ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size);
             }
         }
 

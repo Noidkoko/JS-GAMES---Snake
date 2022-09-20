@@ -1,5 +1,7 @@
 #canvas {
     background-image: url(assets/bg.jpg);
+    background-size: cover;
+    background-position: center;
     width: 600px;
     height: 600px;
 }

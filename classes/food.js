@@ -5,13 +5,12 @@ class Food {
 
     }  
     setRandomPosition() {
-        this.x = Math.round(Math.random() * GAME_SIZE % ((GAME_SIZE / this.size)-1))
-        this.y = Math.round(Math.random() * GAME_SIZE % ((GAME_SIZE / this.size)-1))
+        this.x = Math.round(Math.random() * GAME_SIZE % ((GAME_SIZE / this.size) - 1));
+        this.y = Math.round(Math.random() * GAME_SIZE % ((GAME_SIZE / this.size) - 1));
     }
 
     draw() {
-        let food = new Image()
-        food.src = './food.png'
-        ctx.drawImage(food, this.x * this.size, this.y * this.size, this.size, this.size)
+        ctx.fillStyle = "red";
+        ctx.fillRect(this.x * this.size, this.y * this.size, this.size, this.size);
     }
 }
